@@ -10,6 +10,7 @@ class Product {
   final String category;
   final int stock;
   final double rating;
+  final Map<String, String> specs;
 
   Product({
     required this.id,
@@ -22,6 +23,7 @@ class Product {
     required this.category,
     required this.stock,
     required this.rating,
+    this.specs = const {},
   });
 
   factory Product.fromJson(Map<String, dynamic> j) => Product(
@@ -32,6 +34,7 @@ class Product {
         images: List<String>.from(j['images'] ?? []),
         sizes: List<String>.from(j['sizes'] ?? []),
         colors: List<String>.from(j['colors'] ?? []),
+        specs: Map<String, String>.from(j['specs'] ?? {}),
         category: j['category'] ?? '',
         stock: j['stock'] ?? 0,
         rating: (j['rating'] ?? 0).toDouble(),
@@ -45,6 +48,7 @@ class Product {
         'images': images,
         'sizes': sizes,
         'colors': colors,
+        'specs': specs,
         'category': category,
         'stock': stock,
         'rating': rating,

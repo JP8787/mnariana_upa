@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/order.dart';
+import '../utils/price_utils.dart';
 
 class OrderDetailScreen extends StatelessWidget {
   final Order order;
@@ -29,29 +30,25 @@ class OrderDetailScreen extends StatelessWidget {
                       : null,
                   title: Text(it.product.title),
                   subtitle: Text('Qty: ${it.qty}'),
-                  trailing: Text(
-                      '€${(it.product.price * it.qty).toStringAsFixed(2)}'),
+                  trailing: Text(formatCOP(it.product.price * it.qty)),
                 );
               },
             ),
           ),
           const Divider(),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            Text('Subtotal'),
-            Text('€${order.subtotal.toStringAsFixed(2)}')
-          ]),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            Text('Shipping'),
-            Text('€${order.shipping.toStringAsFixed(2)}')
-          ]),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            Text('Taxes'),
-            Text('€${order.taxes.toStringAsFixed(2)}')
-          ]),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Text('Subtotal'), Text(formatCOP(order.subtotal))]),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Text('Shipping'), Text(formatCOP(order.shipping))]),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Text('Taxes'), Text(formatCOP(order.taxes))]),
           const SizedBox(height: 8),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Text('Total', style: const TextStyle(fontWeight: FontWeight.bold)),
-            Text('€${order.total.toStringAsFixed(2)}',
+            Text(formatCOP(order.total),
                 style: const TextStyle(fontWeight: FontWeight.bold))
           ]),
         ]),

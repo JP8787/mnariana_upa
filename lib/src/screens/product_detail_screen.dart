@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/product.dart';
 import '../providers/cart_provider.dart';
+import '../utils/price_utils.dart';
 
 class ProductDetailScreen extends ConsumerStatefulWidget {
   final Product product;
@@ -77,7 +78,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
                       const SizedBox(width: 6),
                       Text(product.rating.toStringAsFixed(1)),
                       const Spacer(),
-                      Text('€${product.price.toStringAsFixed(2)}',
+                      Text(formatCOP(product.price),
                           style: const TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold)),
                     ],

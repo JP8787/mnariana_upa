@@ -16,7 +16,7 @@ final productsProvider = Provider<List<Product>>((ref) {
       'images': [
         'https://images.unsplash.com/photo-1518444027927-3f6aa0f7c0f0?auto=format&fit=crop&w=800&q=80'
       ],
-      'sizes': ['S', 'M', 'L'],
+      'sizes': [],
       'colors': ['Black', 'White'],
       'category': 'Audio',
       'stock': 12,
@@ -86,11 +86,56 @@ final productsProvider = Provider<List<Product>>((ref) {
       'images': [
         'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80'
       ],
-      'sizes': ['One Size'],
+      'sizes': [],
       'colors': ['Black', 'Blue'],
       'category': 'Audio',
       'stock': 10,
       'rating': 4.1
+    },
+    // Hardware example: procesador
+    {
+      'id': 'p12',
+      'title': 'Procesador Ryzen 5 5600X',
+      'description':
+          'Procesador AMD de alto rendimiento para gaming y productividad',
+      'price': 199.0,
+      'images': [
+        'https://images.unsplash.com/photo-1588615402798-6b5b8a0f3c6a?auto=format&fit=crop&w=800&q=80'
+      ],
+      'sizes': [],
+      'colors': [],
+      'category': 'Components',
+      'stock': 6,
+      'rating': 4.8,
+      'specs': {
+        'Cores': '6',
+        'Threads': '12',
+        'Base': '3.7 GHz',
+        'Boost': '4.6 GHz',
+        'Socket': 'AM4',
+        'TDP': '65W'
+      }
+    },
+    {
+      'id': 'p13',
+      'title': 'Kit RAM 16GB (2x8) DDR4 3200MHz',
+      'description':
+          'Memoria RAM rápida para mejorar el rendimiento del sistema',
+      'price': 79.0,
+      'images': [
+        'https://images.unsplash.com/photo-1587814557552-1f62e5d8b7bb?auto=format&fit=crop&w=800&q=80'
+      ],
+      'sizes': [],
+      'colors': [],
+      'category': 'Components',
+      'stock': 14,
+      'rating': 4.5,
+      'specs': {
+        'Capacity': '16GB',
+        'Config': '2x8GB',
+        'Speed': '3200MHz',
+        'Type': 'DDR4'
+      }
     },
     {
       'id': 'p7',
